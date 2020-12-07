@@ -16,8 +16,8 @@ namespace MySocialNetwork.DAO
         {
             try
             {
-                Group group = dbContext.Groups.Where(g => g.Title == title).Include(g => g.Walls).Include(g => g.ScoredPosts).First();
-                foreach (Group wall in group.Walls)
+                Group group = dbContext.Groups.Where(g => g.Title == title).Include(g => g.Walls).First();
+                foreach (Wall wall in group.Walls)
                 {
                     WallType wallType = dbContext.WallTypes.Where(wt => wt.Id == wall.WallTypeId).First();
                     wall.WallType = wallType;
@@ -75,7 +75,7 @@ namespace MySocialNetwork.DAO
             {
                 foundedGroups = foundedGroups.Where(g => g.Title == groupInfo.Title).ToList();
             }
-            return foundedUsers;
+            return foundedGroups;
         }
 
     }

@@ -31,6 +31,7 @@ namespace MySocialNetwork.DAO
             modelBuilder.Entity<Post>().HasMany(p => p.ScoredPosts);
         }
         
+        public DbSet<Group> Groups { get; set; }
         public DbSet<SystemRole> SystemRoles { get; set; }
         public DbSet<Wall> Walls { get; set; }
         public DbSet<Friendship> Friendships { get; set; }

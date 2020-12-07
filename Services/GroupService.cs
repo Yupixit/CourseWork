@@ -1,3 +1,8 @@
+using MySocialNetwork.Utils;
+using MySocialNetwork.DAO;
+using MySocialNetwork.DTO;
+
+
 namespace MySocialNetwork.Services
 {
     public class GroupService
@@ -8,20 +13,20 @@ namespace MySocialNetwork.Services
 
         public void GroupCreation(GroupCreationDto groupcreationDto)
         {
-            Group group = mapper.FromGroupCreationDtoToGroup(groupcreationDto);
-            groupManager.AddGroup(group);
+           /* Group group = mapper.FromGroupCreationDtoToGroup(groupcreationDto);
+            groupManager.AddGroup(group);*/
         }
 
         public void UpdateScoredPostList(GroupDto groupDto)
         {
             Group group = groupManager.GetGroupByTitle(groupDto.Title);
-            groupDto.ScoredPosts = mapper.FindScoredPosts(group);
+            //groupDto.ScoredPosts = mapper.FindScoredPosts(group);
         }
 
-        public List<GroupDto> FindGroups(FindGroupsDto groupInfo)
+       /* public List<GroupDto> FindGroups(FindGroupsDto groupInfo)
         {
             List<Group> groups = groupManager.FindGroups(groupInfo);
             return groups;
-        }
+        }*/
     }
 }
