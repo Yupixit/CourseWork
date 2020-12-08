@@ -40,5 +40,7 @@ namespace MySocialNetwork.DAO
         public DbSet<Post> Posts { get; set; }
         public DbSet<Content> Content { get; set; }
         public DbSet<ScoredPost> ScoredPosts { get; set; }
+
+        public System.Data.Entity.DbSet<MySocialNetwork.DAO.GroupType> GroupTypes { get; set; }
     }
 }
